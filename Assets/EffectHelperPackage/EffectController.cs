@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Unity.VisualScripting;
 
 public interface IEffectController
 {
@@ -32,12 +33,9 @@ public class EffectController : MonoBehaviour,IEffectController
     void OnEnable()
     {
         ControlEvent C_event = CtrEvents.Find(C_event => C_event.ID == "OnOff");
-        if (C_event.ID != "OnOff")
+        if (CtrEvents.Count == 0)
         { // find fail 
-            C_event.ID = "OnOff";
-            C_event.is_testing = false;
-            C_event.testbar = 0;
-            CtrEvents.Add(C_event);
+           Debug.Log("Plz fill in Crtevents, List is empty");
         }
     }
 
@@ -48,7 +46,7 @@ public class EffectController : MonoBehaviour,IEffectController
         {
             if (C_event.is_testing)
             {
-                SetValue(C_event.testbar);
+                SetValue(C_event.testbar,C_event.ID);
             }
         }
 
