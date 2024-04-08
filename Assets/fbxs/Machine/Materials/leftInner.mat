@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: leftInner
-  m_Shader: {fileID: -6465566751694194690, guid: a1eaa556cd279084ba103e0397432036,
+  m_Shader: {fileID: -6465566751694194690, guid: 0003d694f8ff3794ba0018d3ba827de3,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -81,6 +81,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _normMap01:
+        m_Texture: {fileID: 2800000, guid: 66be21b2b171f834aa2fee39e91fd9a5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _normMap02:
+        m_Texture: {fileID: 2800000, guid: 8ae67e2f38fcd98468878ff26c67ac55, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -129,6 +137,8 @@ Material:
     - _WaterLevel: -0.04
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _fill: 2.33
+    - _texporp: 0
     m_Colors:
     - _BaseColor: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
     - _Color: {r: 0.9063317, g: 0.9063317, b: 0.9063317, a: 1}
@@ -136,4 +146,7 @@ Material:
     - _EmmisionColor: {r: 0, g: 0.6686816, b: 1, a: 0}
     - _MainColor: {r: 0, g: 0.5821352, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _fresnelColor: {r: 0.6037736, g: 0.0085439505, b: 0.0972449, a: 0}
+    - _sideColor: {r: 1, g: 0, b: 0.059916496, a: 0}
+    - _upColor: {r: 2, g: 0, b: 0.20567322, a: 0}
   m_BuildTextureStacks: []
