@@ -60,7 +60,7 @@ public class EffectController : MonoBehaviour,IEffectController
         }
         catch (Exception e)
         {
-            // Debug.LogError(e.Message);
+             Debug.LogError(e.Message);
         }
     }
 

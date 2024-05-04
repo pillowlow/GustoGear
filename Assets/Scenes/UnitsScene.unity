@@ -435,6 +435,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f86518efa4aff43ab4c3d3feaa709f, type: 3}
+--- !u!1 &537673355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 537673357}
+  - component: {fileID: 537673356}
+  m_Layer: 0
+  m_Name: ColorListManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &537673356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537673355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e668c83541be54a9664000fea0bd72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorMappings:
+  - tasteType: 0
+    color: {r: 1, g: 0, b: 0.39061022, a: 0}
+  - tasteType: 1
+    color: {r: 0.7450278, g: 1, b: 0, a: 0}
+  - tasteType: 2
+    color: {r: 0.01886796, g: 0, b: 0.2264151, a: 0}
+  - tasteType: 3
+    color: {r: 1, g: 0.45709425, b: 0, a: 0}
+  - tasteType: 4
+    color: {r: 0.2830189, g: 0.1294945, b: 0.1294945, a: 0}
+  - tasteType: 5
+    color: {r: 0.05128092, g: 0.4339623, b: 0, a: 0}
+--- !u!4 &537673357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537673355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.4093924, y: -3.8575277, z: -3.9450388}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &559923745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -675,7 +732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e6f9c9444be4c43a28d7e3c228da71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basicColor: {r: 1, g: 0.062772624, b: 0, a: 1}
+  taste: 0
   currentState: 0
   baseColorParamName: _baseColor
   emissionColorParamName: _edgeColor
@@ -1744,6 +1801,7 @@ MonoBehaviour:
   targetTag: ColorUnit
   mat: {fileID: 2100000, guid: 2e6cdb8d3f4f04a44afef12af859460b, type: 2}
   colorParamName: _BottomColor
+  edgeColorPara: _FoamColor
   waterLevelParamName: _WaterLevel
   waterLevelRange: {x: -0.46, y: 0.57}
 --- !u!65 &1988258204
@@ -1943,3 +2001,4 @@ SceneRoots:
   - {fileID: 2076496841}
   - {fileID: 559923745}
   - {fileID: 173377296}
+  - {fileID: 537673357}

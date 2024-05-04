@@ -6,13 +6,15 @@ using UnityEngine;
 public class Bowl : MonoBehaviour
 {
     [SerializeField]
-    private Collider myCollider;
+    private Collider myCollider; // Consider whether you need this exposed if not used programmatically
     [SerializeField]
     private string targetTag = "ColorUnit"; // Ensure this matches the tag of your ColorUnit objects
     [SerializeField]
     private Material mat;
     [SerializeField]
     private string colorParamName = "_Color"; // Shader color property name
+    [SerializeField]
+    private string edgeColorPara = "_EdgeColor"; // Ensure shader has this property
     [SerializeField]
     private string waterLevelParamName = "_WaterLevel"; // Shader water level property name
     [SerializeField]
@@ -32,18 +34,19 @@ public class Bowl : MonoBehaviour
         if (other.CompareTag(targetTag) && waterLevel < maxLevel)
         {
             ColorUnit colorUnit = other.GetComponent<ColorUnit>();
-            if (colorUnit != null)
-            {
-                if (liquidColor == Color.black)
+            if (colorUnit != null && colorUnit.currentState == UnitState.Liquid) // State check directly
+            {   
+                Color incomingColor = ColorListManager.Instance.GetColorByTasteType(colorUnit.taste);
+                if (liquidColor == Color.black) // If bowl is initially empty
                 {
-                    liquidColor = CalculateHDRColor(colorUnit.basicColor); // Assign HDR color directly if current is black
+                    liquidColor = CalculateHDRColor(incomingColor); // Directly assign HDR color
                 }
                 else
                 {
-                    MixColors(CalculateHDRColor(colorUnit.basicColor));
+                    MixColors(CalculateHDRColor(incomingColor));
                 }
 
-                waterLevel += 1; // Increment water level
+                waterLevel++; // Increment water level
                 UpdateMaterialProperties();
                 
                 if (waterLevel >= maxLevel)
@@ -56,6 +59,7 @@ public class Bowl : MonoBehaviour
 
     private void MixColors(Color newColor)
     {
+        // Mixing the new color with the existing one by averaging
         liquidColor = (liquidColor + newColor) / 2;
     }
 
@@ -63,9 +67,10 @@ public class Bowl : MonoBehaviour
     {
         if (mat != null)
         {
-            mat.SetColor(colorParamName, liquidColor);
+            mat.SetColor(colorParamName, liquidColor); // Set main color
+            mat.SetColor(edgeColorPara, CalculateHDRColor(liquidColor)); // Set edge color with HDR
             float normalizedLevel = Mathf.Lerp(waterLevelRange.x, waterLevelRange.y, (float)waterLevel / maxLevel);
-            mat.SetFloat(waterLevelParamName, normalizedLevel);
+            mat.SetFloat(waterLevelParamName, normalizedLevel); // Set water level in shader
         }
     }
 
@@ -73,12 +78,13 @@ public class Bowl : MonoBehaviour
     {
         waterLevel = 0;
         liquidColor = Color.black;
-        UpdateMaterialProperties();
+        UpdateMaterialProperties(); // Update shader properties
         Debug.Log("Bowl reset to initial state.");
     }
 
     private Color CalculateHDRColor(Color baseColor)
     {
-        return baseColor * 2.0f; // Simple example of making the color brighter
+        // Enhancing the color's brightness; adjust the multiplier as needed
+        return baseColor * 2.0f;
     }
 }

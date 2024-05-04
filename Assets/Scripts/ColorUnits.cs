@@ -11,7 +11,8 @@ public enum UnitState
 public class ColorUnit : MonoBehaviour
 {
     // Public Color variable for basic color
-    public Color basicColor;
+    
+    public TasteType taste;
 
     // Enumeration for different states of the ColorUnit
     
@@ -43,9 +44,9 @@ public class ColorUnit : MonoBehaviour
     private void ApplyColors()
     {
         if (targetMaterial != null)
-        {
-            targetMaterial.SetColor(baseColorParamName, basicColor);
-            Color emissionColor = CalculateEmissionColor(basicColor);
+        {   Color color = ColorListManager.Instance.GetColorByTasteType(taste);
+            targetMaterial.SetColor(baseColorParamName, color);
+            Color emissionColor = CalculateEmissionColor(color);
             targetMaterial.SetColor(emissionColorParamName, emissionColor);
         }
     }

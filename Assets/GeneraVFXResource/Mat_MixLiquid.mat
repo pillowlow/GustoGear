@@ -126,11 +126,11 @@ Material:
     - _fill: 0.14
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BottomColor: {r: 0.75, g: 0.047079466, b: 0, a: 1}
+    - _BottomColor: {r: 1.018868, g: 0, b: 0.6170253, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FillAmount: {r: 0, g: 0, b: 0, a: 0}
-    - _FoamColor: {r: 0.45911944, g: 1, b: 0.8136967, a: 1}
+    - _FoamColor: {r: 2.037736, g: 0, b: 1.2340506, a: 0}
     - _Rim_Color: {r: 1, g: 0.9685534, b: 0.9685534, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _TopColor: {r: 1, g: 0.84673816, b: 0.83647794, a: 1}
