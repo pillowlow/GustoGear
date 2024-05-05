@@ -22,7 +22,9 @@ public class Bowl : MonoBehaviour
 
     private int waterLevel = 0;
     private int maxLevel = 2;
-    private Color liquidColor = Color.black; // Default color
+    private Color liquidColor;
+    
+    private TasteType taste = TasteType.None; // Default Type
 
     void Start()
     {
@@ -36,14 +38,16 @@ public class Bowl : MonoBehaviour
             ColorUnit colorUnit = other.GetComponent<ColorUnit>();
             if (colorUnit != null && colorUnit.currentState == UnitState.Liquid) // State check directly
             {   
-                Color incomingColor = ColorListManager.Instance.GetColorByTasteType(colorUnit.taste);
-                if (liquidColor == Color.black) // If bowl is initially empty
-                {
-                    liquidColor = CalculateHDRColor(incomingColor); // Directly assign HDR color
+                
+                if (taste == TasteType.None) // If bowl is initially empty
+                {   
+                    taste = colorUnit.Taste;
+                    liquidColor = ColorListManager.Instance.GetColorByTasteType(taste);
                 }
                 else
-                {
-                    MixColors(CalculateHDRColor(incomingColor));
+                {   
+                    taste = ColorListManager.Instance.Mix(taste,colorUnit.Taste);
+                    liquidColor = ColorListManager.Instance.GetColorByTasteType(taste);
                 }
 
                 waterLevel++; // Increment water level
@@ -57,11 +61,7 @@ public class Bowl : MonoBehaviour
         }
     }
 
-    private void MixColors(Color newColor)
-    {
-        // Mixing the new color with the existing one by averaging
-        liquidColor = (liquidColor + newColor) / 2;
-    }
+    
 
     private void UpdateMaterialProperties()
     {
