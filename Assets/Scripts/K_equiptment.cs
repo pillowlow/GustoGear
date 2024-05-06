@@ -178,7 +178,7 @@ public abstract class K_Equipment : MonoBehaviour
             ColorUnit colorUnit = outcome.GetComponent<ColorUnit>();
             if (colorUnit != null)
             {
-                colorUnit.AssignTaste(colorUnit.Taste);
+                colorUnit.AssignTaste(currentUnit.Taste);
             }
             else
             {

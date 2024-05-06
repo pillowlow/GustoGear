@@ -43,11 +43,13 @@ public class Bowl : MonoBehaviour
                 {   
                     taste = colorUnit.Taste;
                     liquidColor = ColorListManager.Instance.GetColorByTasteType(taste);
+                    colorUnit.DestroySelf();
                 }
                 else
                 {   
                     taste = ColorListManager.Instance.Mix(taste,colorUnit.Taste);
                     liquidColor = ColorListManager.Instance.GetColorByTasteType(taste);
+                    colorUnit.DestroySelf();
                 }
 
                 waterLevel++; // Increment water level
