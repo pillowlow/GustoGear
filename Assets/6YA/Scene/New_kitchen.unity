@@ -325,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &46527349
 Transform:
   m_ObjectHideFlags: 0
@@ -340,7 +340,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1092184994}
-  - {fileID: 596619878}
+  - {fileID: 1236128665}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &76049417
@@ -852,279 +852,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7373627442219967349, guid: 229d303988f8a9549999c511949f2752,
     type: 3}
   m_PrefabInstance: {fileID: 536869096}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &596619877
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 46527349}
-    m_Modifications:
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.1384268
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.5512811
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.4516548
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: debugLevel
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: readTimeout
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: ManagerState
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: writeTimeout
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: interfaceType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: shouldReconnect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: threadFrequency
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: defaultArduinoBoardType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].pinMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].prevPin
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: blackListedPorts.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: uduinoWiFiBoards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].sendValue
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].currentPin
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: blackListedPorts.Array.data[0]
-      value: COM3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].arduinoName
-      value: uduinoBoard
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].isEditorPin
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].prevPinMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: pins.Array.data[0].prevSendValue
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: uduinoWiFiBoards.Array.data[0].ip
-      value: 192.168.2.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.keys.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: uduinoWiFiBoards.Array.data[0].port
-      value: 4222
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.keys.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.values.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.keys.Array.data[1]
-      value: UduinoDevice_Wifi
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.keys.Array.data[2]
-      value: UduinoDevice_DesktopSerial
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.values.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.keys.Array.data[0]
-      value: UduinoDevice_DesktopSerial
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.keys.Array.data[1]
-      value: UduinoDevice_DesktopBluetoothLE
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.keys.Array.data[2]
-      value: UduinoDevice_AndroidBluetoothLE
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.keys.Array.data[3]
-      value: UduinoDevice_AndroidSerial
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.keys.Array.data[4]
-      value: UduinoDevice_Wifi
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.values.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.values.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: activeExtentionsMap.values.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.values.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.values.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.values.Array.data[2]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.values.Array.data[3]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114023058375386772, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-        type: 3}
-      propertyPath: presentExtentionsMap.values.Array.data[4]
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bb5e6aea88a650f4a8317e74940b0ea4, type: 3}
---- !u!4 &596619878 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4720884688345560, guid: bb5e6aea88a650f4a8317e74940b0ea4,
-    type: 3}
-  m_PrefabInstance: {fileID: 596619877}
   m_PrefabAsset: {fileID: 0}
 --- !u!210 &599245514
 SortingGroup:
@@ -7201,6 +6928,52 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca98c903ecab9494d8720feb85414c05, type: 3}
+--- !u!1 &1236128664
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236128665}
+  - component: {fileID: 1236128666}
+  m_Layer: 0
+  m_Name: Bluetooh_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1236128665
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236128664}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 46527349}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1236128666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236128664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750432dc24f79384a87a3b9a294e79a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeviceName: ESP32-6YA
+  stateText: {fileID: 0}
 --- !u!1001 &1284749046
 PrefabInstance:
   m_ObjectHideFlags: 0
