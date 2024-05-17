@@ -5,7 +5,7 @@ using TMPro;
 
 public class ESP32BLEApp : MonoBehaviour
 {
-    public string DeviceName = "SoundCore Life Q30"; //esp32 device name
+    public string DeviceName = "ESP32-6YA"; //esp32 device name
     private string ServiceUUID = "FFE0";
     private string Characteristic = "FFE1";
 

@@ -5,15 +5,14 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/6YA/Scene/demo_6.unity
-    guid: fa0bb64e54c986b4bbe626ee2c3a09e9
+  - enabled: 1
+    path: Assets/6YA/Scene/New_kitchen.unity
+    guid: 5f82bcb42691cd444b4151b95f66fa45
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f7509d3868b80684486ee8cbf63d7055,
       type: 2}
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000,
+      guid: e6c42889efe1c0e498f87348485d9979, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4cbf81dcc03172342944c42e78749a9a,
       type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
