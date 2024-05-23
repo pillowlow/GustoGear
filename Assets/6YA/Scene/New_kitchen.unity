@@ -1283,7 +1283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 750432dc24f79384a87a3b9a294e79a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeviceName: ESP32-6YA
   deviceNameText: {fileID: 850548587171893409}
   deviceIDText: {fileID: 54817487}
   stateText: {fileID: 850548589047866756}
@@ -91307,7 +91306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7236472241990629958
 Transform:
   m_ObjectHideFlags: 0
