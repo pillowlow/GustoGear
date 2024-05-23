@@ -5,9 +5,9 @@ using TMPro;
 
 public class ESP32BLEApp : MonoBehaviour
 {
-    public string DeviceName = "ESP32-6YA"; //esp32 device name
-    private string ServiceUUID = "FFE0";
-    private string Characteristic = "FFE1";
+    public string DeviceName = "ESP32 BLE Server"; //esp32 device name
+    private string ServiceUUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b";
+    private string Characteristic = "beb5483e-36e1-4688-b7f5-ea07361b26a8";
 
     enum States
     {
@@ -29,6 +29,7 @@ public class ESP32BLEApp : MonoBehaviour
     private string _deviceAddress;
 
     [SerializeField] private TMP_Text stateText;
+    [SerializeField] private TMP_Text deviceInfoText;
 
     // // this is our hm10 device
     // private string _hm10;
@@ -77,6 +78,7 @@ public class ESP32BLEApp : MonoBehaviour
     {
         // BluetoothStatus.text = "Initializing...";
         SetStateText("Initializing...");
+        deviceInfoText= "SERVICE_UUID:"+ ServiceUUID + "\nCHARACTERISTIC_UUID:"+ Characteristic;
         Reset();
         BluetoothLEHardwareInterface.Initialize(true, false, () =>
         {
