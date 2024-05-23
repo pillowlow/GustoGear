@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 54817488}
   - component: {fileID: 54817487}
   m_Layer: 0
-  m_Name: Board Info
+  m_Name: Board ID
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,6 +1284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DeviceName: ESP32-6YA
+  deviceNameText: {fileID: 850548587171893409}
+  deviceIDText: {fileID: 54817487}
   stateText: {fileID: 850548589047866756}
 --- !u!1001 &755313187
 PrefabInstance:

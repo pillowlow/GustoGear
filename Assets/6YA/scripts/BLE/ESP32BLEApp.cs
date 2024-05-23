@@ -28,8 +28,11 @@ public class ESP32BLEApp : MonoBehaviour
     private bool _foundID = false;
     private string _deviceAddress;
 
+    [SerializeField] private TMP_Text deviceNameText;
+    [SerializeField] private TMP_Text deviceIDText;
+
+
     [SerializeField] private TMP_Text stateText;
-    [SerializeField] private TMP_Text deviceInfoText;
 
     // // this is our hm10 device
     // private string _hm10;
@@ -78,7 +81,8 @@ public class ESP32BLEApp : MonoBehaviour
     {
         // BluetoothStatus.text = "Initializing...";
         SetStateText("Initializing...");
-        deviceInfoText= "SERVICE_UUID:"+ ServiceUUID + "\nCHARACTERISTIC_UUID:"+ Characteristic;
+        deviceNameText.text = "Device Name: " + DeviceName;
+        deviceIDText.text = "SERVICE_UUID:"+ ServiceUUID + "\nCHARACTERISTIC_UUID:"+ Characteristic;
         Reset();
         BluetoothLEHardwareInterface.Initialize(true, false, () =>
         {
