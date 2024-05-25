@@ -806,8 +806,8 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: UDUINO_READY
-    Standalone: UDUINO_READY;UDUINO_MEGA_MESSAGE
+    Android: UDUINO_READY;UDUINO_MEGA_MESSAGE
+    Standalone: UDUINO_READY;UDUINO_MEGA_MESSAGE;UDUINO_WIFI
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
