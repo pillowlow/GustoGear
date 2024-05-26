@@ -2,7 +2,7 @@
 
 namespace Uduino
 {
-    public static class Log 
+    public static class Log
     {
         private static LogLevel _debugLevel;
 
@@ -26,15 +26,15 @@ namespace Uduino
                 UnityEngine.Debug.LogWarning(message);
         }
 
-        public static void Info(object message,  bool removeNewLines = false)
+        public static void Info(object message, bool removeNewLines = false)
         {
             if (removeNewLines) message.ToString().RemoveLineEndings();
 
             if ((int)_debugLevel <= (int)LogLevel.Info && (int)_debugLevel != 0)
-              UnityEngine.Debug.Log(((string)message).RemoveLineEndings());
+                UnityEngine.Debug.Log(((string)message).RemoveLineEndings());
         }
 
-        public static string TrimStartString(string sourceString, char[]  trimed)
+        public static string TrimStartString(string sourceString, char[] trimed)
         {
             sourceString = sourceString.TrimStart(trimed);
             return sourceString;
@@ -42,9 +42,9 @@ namespace Uduino
 
         public static void Debug(object message, bool removeNewLines = false)
         {
-            if (removeNewLines) message.ToString().RemoveLineEndings();
-            if ((int)_debugLevel <= (int)LogLevel.Debug && (int)_debugLevel !=0)
-                UnityEngine.Debug.Log(message);
+            // if (removeNewLines) message.ToString().RemoveLineEndings();
+            // if ((int)_debugLevel <= (int)LogLevel.Debug && (int)_debugLevel !=0)
+            //     UnityEngine.Debug.Log(message);
         }
 
         public static void SetLogLevel(LogLevel level)

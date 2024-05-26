@@ -138,6 +138,11 @@ PlayerSettings:
   bundleVersion: 1.0.0
   preloadedAssets:
   - {fileID: 11400000, guid: 8f3383de282a8e145ae9b80fbc8615a5, type: 2}
+  - {fileID: -3523022743239659946, guid: 9f54ea13256edfd429427d881e231ea6, type: 2}
+  - {fileID: 11400000, guid: f7509d3868b80684486ee8cbf63d7055, type: 2}
+  - {fileID: 11400000, guid: e101b6edf023b324db79143ae4e701ec, type: 2}
+  - {fileID: 11400000, guid: e6c42889efe1c0e498f87348485d9979, type: 2}
+  - {fileID: -8627501154263012209, guid: 4cbf81dcc03172342944c42e78749a9a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -806,7 +811,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: UDUINO_READY;UDUINO_MEGA_MESSAGE
+    Android: UDUINO_READY;UDUINO_MEGA_MESSAGE;UDUINO_WIFI
     Standalone: UDUINO_READY;UDUINO_MEGA_MESSAGE;UDUINO_WIFI
   additionalCompilerArguments: {}
   platformArchitecture: {}
