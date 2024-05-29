@@ -5,9 +5,9 @@ using TMPro;
 
 public class ESP32BLEApp : MonoBehaviour
 {
-    public string DeviceName = "ESP32-6YA"; //esp32 device name
-    private string ServiceUUID = "FFE0";
-    private string Characteristic = "FFE1";
+    private string DeviceName = "GustoBLE-Server"; //esp32 device name
+    private string ServiceUUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b";
+    private string Characteristic = "beb5483e-36e1-4688-b7f5-ea07361b26a8";
 
     enum States
     {
@@ -27,6 +27,10 @@ public class ESP32BLEApp : MonoBehaviour
     private States _state = States.None;
     private bool _foundID = false;
     private string _deviceAddress;
+
+    [SerializeField] private TMP_Text deviceNameText;
+    [SerializeField] private TMP_Text deviceIDText;
+
 
     [SerializeField] private TMP_Text stateText;
 
@@ -77,6 +81,8 @@ public class ESP32BLEApp : MonoBehaviour
     {
         // BluetoothStatus.text = "Initializing...";
         SetStateText("Initializing...");
+        deviceNameText.text = "Device Name: " + DeviceName;
+        deviceIDText.text = "SERVICE_UUID:\n"+ ServiceUUID + "\nCHARACTERISTIC_UUID:\n"+ Characteristic;
         Reset();
         BluetoothLEHardwareInterface.Initialize(true, false, () =>
         {
@@ -114,11 +120,11 @@ public class ESP32BLEApp : MonoBehaviour
 
                     case States.Scan:
                         // BluetoothStatus.text = "Scanning for ESP32 devices...";
-                        SetStateText("Scanning for ESP32 devices...");
+                        SetStateText("Scanning for "+deviceNameText.text+" devices...");
 
-                        BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(null, (address, name) =>
+                        BluetoothLEHardwareInterface.ScanForPeripheralsWithServices(new string[] { ServiceUUID }, (address, name) =>
                         {
-
+                            Debug.Log("Found device: " + name + ", address: " + address);
                             // we only want to look at devices that have the name we are looking for
                             // this is the best way to filter out devices
                             if (name.Contains(DeviceName))
