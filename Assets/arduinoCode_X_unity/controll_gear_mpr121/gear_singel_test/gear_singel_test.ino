@@ -1,4 +1,3 @@
-
 #include <Stepper.h>
 #include <BluetoothSerial.h>
 #include <Adafruit_MPR121.h>
