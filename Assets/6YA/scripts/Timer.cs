@@ -10,9 +10,10 @@ public class Timer : MonoBehaviour
     [SerializeField] private TMP_Text UIText;
     public int duration;
     private int remainingTime;
-    private bool Pause;
+    private bool Pause = false;
     private void Start()
     {
+        Pause = false;
         Being(duration);
     }
     private void Being(int second)

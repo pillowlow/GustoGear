@@ -43,6 +43,8 @@ public abstract class K_Equipment : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {   
+        //show other name
+        Debug.Log("Enter Collider:"+other.name);
         ColorUnit unit = other.GetComponent<ColorUnit>();
         if (other.CompareTag("ColorUnit"))
         {

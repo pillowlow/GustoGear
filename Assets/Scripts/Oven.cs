@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Oven : K_Equipment
 {
+    public TimerManager tm;
     // Override to handle what happens when the oven becomes active
     protected override void OnActive()
     {
@@ -16,6 +17,8 @@ public class Oven : K_Equipment
     {
         effectController.SetOff(ActiveTag);
         effectController.SetOn(ProcessingTag);
+        // Start the timer
+        tm.genTimer(15);
         Debug.Log("The oven's heat wraps around the dough, beginning the transformation...");
         yield return new WaitForSeconds(wait);
         Debug.Log("Golden crusts form as the scent of fresh baking fills the air...");
