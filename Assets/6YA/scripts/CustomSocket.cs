@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Oculus.Interaction;
 
@@ -9,29 +8,28 @@ public class CustomSocket : MonoBehaviour
     private GameObject attachPointOnSocket;
     [SerializeField]
     private GameObject UnitSet;
-
+    private bool isOccupied = false;
     private void OnTriggerEnter(Collider other)
     {
+        if (isOccupied) return;  // 如果已经被占用，直接返回
         if (other.CompareTag("ColorUnit"))
         {
-            // get object name "AttachPoint" 
-            GameObject attachPointOnSocket = GameObject.Find("AttachPoint");
-            if (attachPointOnSocket == null)
+            if (attachPointOnSocket != null)
             {
-                Debug.LogError("AttachPoint not found");
                 other.transform.position = attachPointOnSocket.transform.position;
                 other.transform.parent = attachPointOnSocket.transform;
-                other.GetComponent<Rigidbody>().isKinematic = true;
+                Rigidbody rb = other.GetComponent<Rigidbody>();
+                if (rb != null)
+                {
+                    rb.isKinematic = true;
+                    rb.useGravity = false;
+                }
+                isOccupied = true;
+                Debug.Log("Object attached: isKinematic=" + rb.isKinematic + ", useGravity=" + rb.useGravity);
             }
             else
             {
-                Debug.Log("AttachPoint found");
-                // 將物件移動到新位置並將其作為子對象
-                other.transform.position = attachPointOnSocket.transform.position;
-                other.transform.parent = attachPointOnSocket.transform;
-                other.GetComponent<Rigidbody>().isKinematic = true;
-                other.GetComponent<Rigidbody>().useGravity = false;
-
+                Debug.LogError("AttachPoint not found");
             }
         }
     }
@@ -40,11 +38,15 @@ public class CustomSocket : MonoBehaviour
     {
         if (other.CompareTag("ColorUnit"))
         {
-            // 解除吸附
             other.transform.parent = UnitSet.transform;
-            other.GetComponent<Rigidbody>().isKinematic = false;
-            other.GetComponent<Rigidbody>().useGravity =false;
-
+            Rigidbody rb = other.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = false;
+                rb.useGravity = true;
+            }
+            isOccupied = false;
+            Debug.Log("Object detached: isKinematic=" + rb.isKinematic + ", useGravity=" + rb.useGravity);
         }
     }
 }

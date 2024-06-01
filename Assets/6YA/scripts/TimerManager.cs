@@ -7,7 +7,9 @@ public class TimerManager : MonoBehaviour
     [SerializeField] private GameObject spawnPoint;
     public void genTimer(int processDuration = 10)
     {
-        GameObject timerInstance = Instantiate(TCanvas, spawnPoint.transform.position, Quaternion.identity);
+        // GameObject timerInstance = Instantiate(TCanvas, spawnPoint.transform.position, Quaternion.identity);
+        GameObject timerInstance = Instantiate(TCanvas, spawnPoint.transform.position, spawnPoint.transform.rotation);
+
         Transform timerTransform = timerInstance.transform.Find("Timer");
         if (timerTransform == null)
         {
@@ -18,6 +20,15 @@ public class TimerManager : MonoBehaviour
         if (timerScript != null)
         {
             timerScript.duration = processDuration; // Set the duration as needed
+        }
+    }
+    public void destroyTimer()
+    {
+        GameObject[] timerInstance = GameObject.FindGameObjectsWithTag("Timer");
+        foreach (GameObject timer in timerInstance)
+        {
+            Destroy(timer);
+            Debug.Log("Timer destroyed");
         }
     }
 
