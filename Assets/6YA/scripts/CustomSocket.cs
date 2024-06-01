@@ -14,6 +14,7 @@ public class CustomSocket : MonoBehaviour
         if (isOccupied) return;  // 如果已经被占用，直接返回
         if (other.CompareTag("ColorUnit"))
         {
+
             if (attachPointOnSocket != null)
             {
                 other.transform.position = attachPointOnSocket.transform.position;
