@@ -19,11 +19,12 @@ public class Bowl : MonoBehaviour
     private string waterLevelParamName = "_WaterLevel"; // Shader water level property name
     [SerializeField]
     private Vector2 waterLevelRange = new Vector2(0.0f, 1.0f); // Range for water level normalization
+    public TimerManager tm;
 
     private int waterLevel = 0;
     private int maxLevel = 2;
     private Color liquidColor;
-    
+
     private TasteType taste = TasteType.None; // Default Type
 
     void Start()
@@ -37,24 +38,24 @@ public class Bowl : MonoBehaviour
         {
             ColorUnit colorUnit = other.GetComponent<ColorUnit>();
             if (colorUnit != null && colorUnit.currentState == UnitState.Liquid) // State check directly
-            {   
-                
+            {
+
                 if (taste == TasteType.None) // If bowl is initially empty
-                {   
+                {
                     taste = colorUnit.Taste;
                     liquidColor = ColorListManager.Instance.GetColorByTasteType(taste);
                     colorUnit.DestroySelf();
                 }
                 else
-                {   
-                    taste = ColorListManager.Instance.Mix(taste,colorUnit.Taste);
+                {
+                    taste = ColorListManager.Instance.Mix(taste, colorUnit.Taste);
                     liquidColor = ColorListManager.Instance.GetColorByTasteType(taste);
                     colorUnit.DestroySelf();
                 }
 
                 waterLevel++; // Increment water level
                 UpdateMaterialProperties();
-                
+
                 if (waterLevel >= maxLevel)
                 {
                     Debug.Log("Bowl Full");
@@ -63,7 +64,7 @@ public class Bowl : MonoBehaviour
         }
     }
 
-    
+
 
     private void UpdateMaterialProperties()
     {

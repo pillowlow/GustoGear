@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pot : K_Equipment
-{   
-   
-    
+{
+
+
     // Override to handle what happens when the pot becomes active
     protected override void OnActive()
     {
@@ -18,9 +18,11 @@ public class Pot : K_Equipment
 
     // Override to implement the specific pot processing logic
     protected override IEnumerator ProcessingRoutine(float wait)
-    {   
+    {
         effectController.SetOff(ActiveTag);
         effectController.SetOn(ProcessingTag);
+        // Start the timer
+        timeManager.genTimer((int)processingTime + endingTime);
         Debug.Log("Pot starts cooking...");
         yield return new WaitForSeconds(wait); // Simulate cooking time
         Debug.Log("Cooking is underway...");
@@ -35,12 +37,13 @@ public class Pot : K_Equipment
         effectController.SetOff(ProcessingTag);
         Debug.Log("Pot has finished cooking. Please serve the dish.");
         // Possibly trigger animation or effects related to completion
+        timeManager.destroyTimer();
     }
 
     // Override to handle what happens when the cycle is complete
     protected override void OnCompleteStart()
-    {   
-        
+    {
+
         base.OnCompleteStart(); // Maintain base functionality if needed
         effectController.SetOff(ProcessingTag);
         effectController.SetOn(CompleteTag);
@@ -58,5 +61,5 @@ public class Pot : K_Equipment
     }
 
     // Example of adding additional functionality unique to Pot
-    
+
 }

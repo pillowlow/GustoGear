@@ -16,6 +16,8 @@ public class Oven : K_Equipment
     {
         effectController.SetOff(ActiveTag);
         effectController.SetOn(ProcessingTag);
+        // Start the timer
+        timeManager.genTimer((int)processingTime + endingTime);
         Debug.Log("The oven's heat wraps around the dough, beginning the transformation...");
         yield return new WaitForSeconds(wait);
         Debug.Log("Golden crusts form as the scent of fresh baking fills the air...");
@@ -29,6 +31,7 @@ public class Oven : K_Equipment
         base.OnProcessingEnd();
         effectController.SetOff(ProcessingTag);
         Debug.Log("Baking complete! The oven dings. Time to enjoy the fruits of your labor.");
+        timeManager.destroyTimer();
     }
 
     // Override to handle what happens when the cycle is complete
